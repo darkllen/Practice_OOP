@@ -14,13 +14,24 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void setCurrent();
+
 
 private slots:
-    void on_pushButton_clicked();
+    void on_actionminimum_size_triggered();
 
-    void on_label_linkActivated(const QString &link);
+    void on_actionmaximum_size_triggered();
+
+    void on_action500x500_triggered();
+
+    void on_action400x400_triggered();
+
+    void on_action300x300_triggered();
+
+    void on_s200_triggered();
 
 private:
     Ui::MainWindow *ui;
+    void resizeEvent( QResizeEvent *e );
 };
 #endif // MAINWINDOW_H
